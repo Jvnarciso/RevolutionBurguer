@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Confira os burgers, porções, bebidas e opções da Revolution Burguer & Chopp em Jundiaí."
+		/>
+		<title>Cardápio | Revolution Burguer & Chopp</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body class="menu-page">
+		<header class="site-header menu-header">
+			<a class="brand-lockup" href="index.html" aria-label="Voltar para início"
+				><span class="brand-mark">R</span
+				><span>REVOLUTION<br /><small>BURGUER & CHOPP</small></span></a
+			>
+			<nav class="menu-page-nav" aria-label="Navegação do cardápio">
+				<a href="index.html">Início</a
+				><a class="is-current" href="cardapio.html" aria-current="page"
+					>Cardápio</a
+				>
+			</nav>
+			<span class="menu-header-label">Cardápio digital / 2026</span
+			><button class="header-cart" data-open-cart>
+				Minha sacola <b data-cart-count>0</b>
+			</button>
+		</header>
+		<main class="menu-main">
+			<section class="menu-intro">
+				<span class="eyebrow">Escolha seu próximo burger.</span>
+				<h1>Cardápio<br /><em>sem regra.</em></h1>
+				<div class="menu-intro-bottom">
+					<p>
+						Feito na chapa, montado na hora<br />e enviado com carinho para a
+						sua mesa.
+					</p>
+					<div class="menu-doodle">BOA<br />FOME <span>↘</span></div>
+				</div>
+			</section>
+			<section class="menu-controls" aria-label="Filtros do cardápio">
+				<div class="category-tabs" role="tablist">
+					<button class="category-tab is-active" data-category="all">
+						Tudo</button
+					><button class="category-tab" data-category="burgers">Burgers</button
+					><button class="category-tab" data-category="combos">Combos</button
+					><button class="category-tab" data-category="sides">Porções</button
+					><button class="category-tab" data-category="drinks">
+						Chopp & bebidas
+					</button>
+				</div>
+				<label class="search-field"
+					><span>⌕</span
+					><input type="search" data-search placeholder="Buscar no cardápio..."
+				/></label>
+			</section>
+			<section class="menu-layout">
+				<div class="menu-list-head">
+					<span data-results-label>Todos os itens</span
+					><span>Arraste para explorar <b>↔</b></span>
+				</div>
+				<div class="product-grid" data-product-grid></div>
+			</section>
+		</main>
+		<div class="mobile-cart-bar" data-open-cart>
+			<span><b data-cart-count>0</b> itens na sacola</span
+			><strong data-cart-total>R$ 0,00</strong
+			><span class="mobile-cart-action">Ver sacola →</span>
+		</div>
+		<div class="modal-backdrop" data-modal-backdrop hidden></div>
+		<aside
+			class="product-modal"
+			data-product-modal
+			aria-hidden="true"
+			role="dialog"
+			aria-modal="true"
+			aria-labelledby="modal-title"
+		>
+			<button class="modal-close" data-close-modal aria-label="Fechar">
+				×
+			</button>
+			<div class="modal-image"><img data-modal-image src="" alt="" /></div>
+			<div class="modal-body">
+				<span class="eyebrow" data-modal-category></span>
+				<h2 id="modal-title" data-modal-title></h2>
+				<p data-modal-description></p>
+				<div class="modal-price" data-modal-price></div>
+				<div class="option-list" data-modal-options></div>
+				<label class="note-field"
+					>Observação
+					<textarea
+						data-modal-note
+						rows="2"
+						placeholder="Ex.: sem cebola..."
+					></textarea>
+				</label>
+				<div class="quantity-row">
+					<span>Quantidade</span>
+					<div class="quantity-control">
+						<button data-modal-minus aria-label="Diminuir quantidade">−</button
+						><b data-modal-quantity>1</b
+						><button data-modal-plus aria-label="Aumentar quantidade">+</button>
+					</div>
+				</div>
+				<button class="button button-red full-button" data-add-modal>
+					Adicionar à sacola <span>↗</span>
+				</button>
+			</div>
+		</aside>
+		<aside class="cart-drawer" data-cart-drawer aria-hidden="true">
+			<div class="drawer-head">
+				<div>
+					<span class="eyebrow">Seu pedido</span>
+					<h2>Sacola <sup data-cart-count>0</sup></h2>
+				</div>
+				<button class="modal-close" data-close-cart aria-label="Fechar sacola">
+					×
+				</button>
+			</div>
+			<div class="cart-items" data-cart-items></div>
+			<div class="cart-footer">
+				<div class="cart-total">
+					<span>Subtotal</span><strong data-cart-total>R$ 0,00</strong>
+				</div>
+				<button class="button button-red full-button" data-open-checkout>
+					Revisar pedido <span>↗</span>
+				</button>
+			</div>
+		</aside>
+		<div class="checkout-overlay" data-checkout hidden>
+			<div class="checkout-card">
+				<button
+					class="modal-close"
+					data-close-checkout
+					aria-label="Fechar revisão"
+				>
+					×</button
+				><span class="eyebrow">Último passo</span>
+				<h2>Revisar<br /><em>pedido.</em></h2>
+				<div class="checkout-summary" data-checkout-summary></div>
+				<div class="checkout-fields">
+					<label
+						>Seu nome
+						<input
+							data-customer-name
+							placeholder="Como podemos te chamar?" /></label
+					><label
+						>Observação geral
+						<textarea
+							data-customer-note
+							rows="2"
+							placeholder="Algum recado para a equipe?"
+						></textarea>
+					</label>
+				</div>
+				<button class="button button-yellow full-button" data-send-whatsapp>
+					Enviar pelo WhatsApp <span>↗</span></button
+				><small class="checkout-disclaimer"
+					>Você será direcionado ao WhatsApp para combinar os detalhes do
+					pedido. Nenhum pagamento é feito pelo site.</small
+				>
+			</div>
+		</div>
+		<div class="toast" data-toast role="status"></div>
+		<script type="module" src="js/menu.js"></script>
+	</body>
+</html>
