@@ -68,9 +68,8 @@ button {
 .brand-mark {
 	display: grid;
 	place-items: center;
-	width: 31px;
-	height: 31px;
-	background: var(--red);
+	width: 71px;
+	height: 71px;
 	color: var(--white);
 	font-family: var(--display);
 	font-size: 20px;
